@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-body>
+
+    <Main_code>
+    <!-- 设置Main类的显示及线程任务 -->
+       <!-- 
+		
+		//HEAD Start
+		
+		//设置主界面显示模型....
+
+        //设置窗口关闭方式
+		setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new WindowAdapter(){
+			   public void windowClosing(WindowEvent e) {
+			    if(JOptionPane.showConfirmDialog(null, "你确定要退出吗？","提示",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION){
+			     System.exit(0);}
+			   }
+		});
+		
+		//设置窗口风格
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			  
+
+
+        //设置主界面提示语
+        new Thread(){
+             public void run(){
+                   while(true){
+                	   try {
+						Thread.sleep(13000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+                       message.setText("小提示:在文件菜单里可以打开windows工具!");
+                       try {
+						Thread.sleep(13000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					message.setText("小提示:管理菜单可以修改登陆密码！");
+					
+					try {
+						Thread.sleep(13000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					message.setText("--Application by Java.");
+					
+					try {
+						Thread.sleep(13000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					message.setText("--RockAgen Inc.");
+                   
+                   }
+                   
+             }
+        }.start();
+
+		//主界面图片轮换
+		new Thread(){
+			public void run(){
+				while(true){
+					try {
+						Thread.sleep(8000);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					main_img.setIcon(new javax.swing.ImageIcon(
+							getClass().getResource("/images/main_1.jpg"))); // NOI18N
+					try {
+						Thread.sleep(8000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					main_img.setIcon(new javax.swing.ImageIcon(
+							getClass().getResource("/images/main_2.jpg"))); // NOI18N
+					try {
+						Thread.sleep(8000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					main_img.setIcon(new javax.swing.ImageIcon(
+							getClass().getResource("/images/main_3.jpg"))); // NOI18N
+					try {
+						Thread.sleep(8000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					main_img.setIcon(new javax.swing.ImageIcon(
+							getClass().getResource("/images/main_4.jpg"))); // NOI18N
+					
+				}
+			}
+		}.start();
+		
+		//添加时钟
+		new Thread(){
+			public void run(){
+				while(true){
+					main_time.setText(DateUtil.getDateTime());
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}.start();
+
+		
+		
+		//设置当前用户
+		user_name.setText(GlobalUser.LOGIN_USER.getName());
+
+		
+		
+		
+		//设置权限
+		if(GlobalUser.LOGIN_USER.getIs_admin()!=0){
+	    manager.setEnabled(false);
+	    borrow_back.setEnabled(false);
+        borrow_delete.setEnabled(false);
+        borrow_query.setEnabled(false);
+        reader_query.setEnabled(false);
+        user_manager.setEnabled(false);    
+        }
+		//设置Main的进度条
+		status.setIndeterminate(true);
+		
+		//HEAD END
+		  -->
+		  <!--end Main clas seting-->
+    </Main_code>
+
+		
+     <XXX_K_Find>
+     <!--设置按关键字查找 进度条模板 -->
+     <!--  
+        //设置查询进度条
+		jProgressBar1.setMaximum(100);
+		jProgressBar1.setMinimum(0);
+		jProgressBar1.setValue(0);
+		jProgressBar1.setVisible(false);
+		jProgressBar1.setStringPainted(false); //不显示字符串
+	-->	
+	<!-- END JProgressBar mode -->
+     </XXX_K_Find>
+		
+
+
+
+</xml-body>
